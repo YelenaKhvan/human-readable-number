@@ -2,7 +2,8 @@ module.exports = function toReadable(number) {
     var ones = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
     var tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
     var teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
-    if (number < 0) number = -number;  // convert negative number to positive
+
+    if (number < 0) return "negative " + toReadable(-number); // handle negative numbers
 
     if (number < 10) return ones[number];
     if (number < 20) return teens[number - 10];
